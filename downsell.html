@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oferta Especial - ProFuel AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --border: #e2e8f0;
+      --orange: #e84e1b;
+      --green: #22c55e;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+      --font: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.5;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Warning Top Bar - Pure Danger Red (Slightly smaller) */
+    .warning-bar {
+      width: 100%;
+      background: #e60000;
+      border-bottom: 2px solid #b30000;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .pulse-badge {
+      width: 8px;
+      height: 8px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+
+    /* Page Container */
+    .container {
+      width: 100%;
+      max-width: 780px;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    h1 span.sub-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    h1 span.highlight {
+      color: var(--green);
+    }
+
+    .subhead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 32px auto;
+    }
+
+    /* Media/Video Placeholder (Light Glassmorphic) */
+    .video-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-container {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #09090b;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .play-hint {
+      color: var(--green);
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .play-btn {
+      width: 64px;
+      height: 64px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 2px solid var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 24px;
+      color: var(--green);
+      transition: all 0.2s ease;
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.1);
+    }
+
+    .play-btn:hover {
+      background: var(--green);
+      color: #fff;
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+    }
+
+    /* Hook / Narrative Section */
+    .hook-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      margin-bottom: 40px;
+      text-align: left;
+      box-shadow: var(--shadow);
+    }
+
+    .hook-intro {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+
+    .hook-list {
+      list-style-type: none;
+      margin-bottom: 24px;
+      padding-left: 5px;
+    }
+
+    .hook-list li {
+      font-size: 15px;
+      color: var(--green);
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 28px;
+      font-weight: 600;
+    }
+
+    .hook-list li::before {
+      content: "⚠️";
+      position: absolute;
+      left: 0;
+      top: -2px;
+      font-size: 16px;
+    }
+
+    .hook-conclusion {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    /* Core benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 580px) {
+      .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .benefit-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .benefit-item:hover {
+      border-color: rgba(34, 197, 94, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .icon-box {
+      font-size: 28px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .benefit-content h3 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .benefit-content p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* Bottom Info */
+    .offer-details {
+      color: var(--text-muted);
+      font-size: 13px;
+      max-width: 540px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="warning-bar">
+    <span class="pulse-badge"></span>
+    ¡ATENCIÓN! No cierres esta página o perderás esta oportunidad única que solo estará activa aquí por tiempo limitado.
+  </div>
+
+  <div class="container">
+    <span class="eyebrow">Última oportunidad - Descuento especial</span>
+    <h1><span class="sub-title">¡Espera! No dejes a tus jugadores sin combustible...</span>¿Qué tal acceder a ProFuel AI por solo <span class="highlight">$27</span>?</h1>
+    <p class="subhead">Consigue acceso vitalicio a ProFuel AI hoy con un descuento exclusivo de $10. Planes nutricionales y de recuperación automatizados.</p>
+
+    <!-- Presentation Video Card -->
+    <div class="video-card">
+      <div class="video-container">
+        <!-- VSL Video element placeholder -->
+        <div class="play-hint">
+          <div class="play-btn">▶</div>
+          <span>Mira este video de 1 minuto para ver cómo optimizar tu energía con IA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hook/Narrative Section -->
+    <div class="hook-card">
+      <p class="hook-intro">Puedes aplicar los mejores 150 ejercicios del mundo y diseñar la jugada más inteligente en la pizarra, pero si tus atletas no tienen la nutrición adecuada:</p>
+      <ul class="hook-list">
+        <li>Se cansarán a mitad del partido, destruyendo toda tu estrategia táctica en los minutos finales.</li>
+        <li>Faltará fuerza explosiva para ganar rebotes, penetrar con potencia y saltar más alto.</li>
+        <li>Su recuperación muscular será lenta, aumentando las bajas por lesión durante la temporada.</li>
+      </ul>
+      <p class="hook-conclusion"><strong>ProFuel AI</strong> es tu mano derecha en preparación física. Calcula el gasto energético exacto de cada posición en la cancha (Base, Alero o Pívot) y genera planes de alimentación, hidratación y suplementación personalizados para que los entregues directamente a tus jugadores o a sus padres, elevando el nivel profesional de tu trabajo.</p>
+    </div>
+
+    <!-- Benefits Grid -->
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="icon-box">🥗</div>
+        <div class="benefit-content">
+          <h3>Planes Nutricionales por Posición</h3>
+          <p>Genera tablas calóricas y de macros exactas para Bases (enfoque en velocidad/resistencia) o Pívots (enfoque en fuerza/explosión).</p>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <div class="icon-box">🧪</div>
+        <div class="benefit-content">
+          <h3>Guía de Suplementación Segura</h3>
+          <p>Orienta a tus atletas con dosificaciones científicas y seguras de Creatina, Beta-Alanina y Proteína de Suero (Whey) basadas en el peso de cada uno.</p>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <div class="icon-box">⚡</div>
+        <div class="benefit-content">
+          <h3>Combustible para Días de Partido</h3>
+          <p>Entrega una guía passo a passo de lo que el atleta debe comer 2 horas antes de entrar a la cancha y cómo hidratarse para mantener la energía en el último cuarto.</p>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <div class="icon-box">💧</div>
+        <div class="benefit-content">
+          <h3>Protocolo de Recuperación Rápida</h3>
+          <p>Reduce los dolores post-entrenamiento y el riesgo de lesiones de tus jugadores con rutinas automatizadas de recuperación muscular y sueño.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="offer-details">
+      <p>💡 Usa los botones generados por Hotmart arriba o abajo para agregar este complemento a tu orden inmediatamente por solo $27.</p>
+    </div>
+  </div>
+
+</body>
+</html>
